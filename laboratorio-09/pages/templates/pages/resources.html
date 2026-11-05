@@ -1,0 +1,36 @@
+{% extends "pages/base.html" %}
+
+{% block title %}Resources | ClassroomHub{% endblock %}
+
+{% block content %}
+    <h2>Learning resources</h2>
+    <p>Browse the available learning materials.</p>
+
+    {% if perms.pages.add_resource %}
+        <p>
+            <a href="{% url 'pages:resource-create' %}">
+                Add resource
+            </a>
+        </p>
+    {% endif %}
+
+    {% for resource in resources %}
+        <article class="resource">
+            <h3>
+                <a href="{% url 'pages:resource-detail' resource.pk %}">
+                    {{ resource.title }}
+                </a>
+            </h3>
+            <p>{{ resource.description }}</p>
+            <p>Category: {{ resource.category.name }}</p>
+
+            {% if resource.available %}
+                <p>Available</p>
+            {% else %}
+                <p>Coming soon</p>
+            {% endif %}
+        </article>
+    {% empty %}
+        <p>No resources are available.</p>
+    {% endfor %}
+{% endblock %}
