@@ -5,6 +5,7 @@
 !/laboratorio-07/
 !/laboratorio-08/
 !/laboratorio-09/
+!/informes/
 
 # Python / Django ignores inside the laboratories
 .venv/
