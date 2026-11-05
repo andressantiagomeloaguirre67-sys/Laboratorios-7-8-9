@@ -1,0 +1,15 @@
+# Ignore everything in Descargas by default except the 3 laboratories and root docs
+/*
+!/README.md
+!/.gitignore
+!/laboratorio-07/
+!/laboratorio-08/
+!/laboratorio-09/
+
+# Python / Django ignores inside the laboratories
+.venv/
+.env
+__pycache__/
+*.py[cod]
+*.log
+db.sqlite3
